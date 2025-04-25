@@ -1,6 +1,6 @@
 import { useMutation, UseMutationOptions } from "@tanstack/react-query";
 import { ClientLoginDto } from "../types/dto/client-login.type";
-import { loginUser } from "../services/loginService";
+import { loginClientUser } from "../services/loginService";
 
 export const useLoginClient = (
   mutationOptions: UseMutationOptions<
@@ -10,6 +10,6 @@ export const useLoginClient = (
   >
 ) =>
   useMutation({
-    mutationFn: ({ loginData }) => loginUser(loginData),
+    mutationFn: ({ loginData }) => loginClientUser(loginData),
     ...mutationOptions,
   });
