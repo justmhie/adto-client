@@ -1,5 +1,3 @@
-import { AppSidebar } from "@/components/sidebar/app-sidebar";
-import { SidebarProvider } from "@/components/ui/sidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,11 +15,7 @@ export default function RootLayout({
         <div
             className={`antialiased`}
         >
-            <SidebarProvider>
-
-                <AppSidebar />
-                <main>{children}</main>
-            </SidebarProvider>
+            <main>{children}</main>
         </div>
     );
 }
