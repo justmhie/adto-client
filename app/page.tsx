@@ -14,6 +14,10 @@ import { Button } from "@/components/ui/button";
 
 import { useGetAllSamahanEventsById } from "@/client/queries/eventQuery";
 
+import NavigationBar from "@/components/ui/NavigationBar";
+import HeroHeader from "@/components/home/HeroHeader";
+
+
 export default function Home() {
   const { data: samahanEvents, isLoading } =
     useGetAllSamahanEventsById("org_a");
@@ -37,6 +41,8 @@ export default function Home() {
 
   return (
     <>
+      <NavigationBar />
+      <HeroHeader />
       {/* Featured Events Carousel - only show if featured events exist */}
       {!isLoading && featuredEvents.length > 0 && (
         <section className="py-12 px-4 lg:px-8">
