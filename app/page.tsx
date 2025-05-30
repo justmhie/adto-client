@@ -16,7 +16,7 @@ import { useGetAllSamahanEventsById } from "@/client/queries/eventQuery";
 
 import NavigationBar from "@/components/ui/NavigationBar";
 import HeroHeader from "@/components/home/HeroHeader";
-
+import OrganizationSection from "@/components/home/OrganizationSection";
 
 export default function Home() {
   const { data: samahanEvents, isLoading } =
@@ -43,6 +43,7 @@ export default function Home() {
     <>
       <NavigationBar />
       <HeroHeader />
+      <OrganizationSection />
       {/* Featured Events Carousel - only show if featured events exist */}
       {!isLoading && featuredEvents.length > 0 && (
         <section className="py-12 px-4 lg:px-8">
